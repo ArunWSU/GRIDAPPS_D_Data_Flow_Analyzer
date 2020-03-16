@@ -34,16 +34,21 @@ The following are to be executed from the Linux terminal.
 	docker exec -it gridappsddocker_adms_app3_1 bash
 	cat runsample.py
 	```
-4. Next, Determine the application container name.
+4. Next, Determine the application container name
 	```
 	docker ps -a
 	```
-5. Extract the measurements enter the docker container using after starting the platform
+5.  After starting the simulation, enter the docker container 
 	```
 	docker exec -it gridappsddocker_adms_app3_1(application container name) bash
+	```
+	
+6. Extract the measurements after modifying the Line name to denote particular test system for simulation
+	```
 	python runsample.py 75076236 '{"power_system_config":  {"Line_name":"_E407CBB6-8C8D-9BC9-589C-AB83FBF0826D"}}'
 	```
-6. Copy the output json file from the container.
+
+7. Copy the output json file from the container
 	```
 	docker cp gridappsddocker_adms_app3_1:/usr/src/adms_app3/voltage_123pv_use_loads.json /home/(output path)
 	```
